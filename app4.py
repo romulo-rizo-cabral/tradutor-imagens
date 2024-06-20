@@ -7,7 +7,8 @@ import os
 def define_local_tesseract():
     # Define o caminho do Tesseract no Windows
     try:
-        pytesseract.pytesseract.tesseract_cmd = f'OCR\\tesseract.exe'
+        print(os.getcwd())
+        pytesseract.pytesseract.tesseract_cmd = f'C:\\Users\\{os.getlogin()}\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
     except:
         print("Caminho do Tesseract não encontrado")
 
@@ -131,5 +132,3 @@ O Tradutor de Imagem oferece uma interface simples e intuitiva, permitindo aos u
         st.write('Texto Traduzido:\n', traducao.text)
     except:
         st.write('Idioma não Detectado.')
-
-
